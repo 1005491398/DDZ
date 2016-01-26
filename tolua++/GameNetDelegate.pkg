@@ -1,0 +1,18 @@
+class GameNetDelegate : public CCNetDelegate
+{
+
+    static GameNetDelegate* getInstance();
+    
+    void connectByIpPort(const char *ip, unsigned short port);
+    bool sendDataLua(unsigned short wMainCmdID,unsigned short wSubCmdID,void* data,unsigned short size);
+    void registerScriptHandler(std::string event, LUA_FUNCTION funcID);
+    void unregisterScriptHandler(std::string event);
+    
+};
+
+class CGameTools
+{
+    static std::string md5(std::string str);
+    static std::string utf2gb(std::string str);
+    static std::string gb2utf(std::string str);
+}
